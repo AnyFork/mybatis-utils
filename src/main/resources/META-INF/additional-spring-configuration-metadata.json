@@ -1,0 +1,30 @@
+{
+  "groups": [{
+      "sourceType": "com.example.properties.DemoProperties",
+      "name": "anyfork",
+      "type": "com.example.properties.DemoProperties"
+    }],
+  "properties": [
+    {
+      "sourceType": "com.example.properties.DemoProperties",
+      "name": "anyfork.enabled",
+      "type": "java.lang.Boolean",
+      "defaultValue": false,
+      "description": "是否启动字段脱敏功能,默认为否."
+    },
+    {
+      "sourceType": "com.example.properties.DemoProperties",
+      "name": "anyfork.user-name",
+      "type": "java.lang.String",
+      "defaultValue": "",
+      "description": "注入名称."
+    },
+    {
+      "sourceType": "com.example.properties.DemoProperties",
+      "name": "anyfork.password",
+      "type": "java.lang.String",
+      "defaultValue": "",
+      "description": "注入密码."
+    }
+  ]
+}
