@@ -46,7 +46,7 @@ public class ScheduleTask {
     @Async
     @Scheduled(fixedDelay = 30000)
     public void taskTwo(){
-        Page<UserInfoEntity> list =  userInfoService.page(new Page<>(1,2),new QueryWrapper<UserInfoEntity>().orderByDesc("created_time"));
-        list.getRecords().forEach(item->log.info("{}：", item));
+        Page<UserInfoEntity> userInfo =  userInfoService.page(new Page<>(1,10));
+        userInfo.getRecords().forEach(System.out::println);
     }
 }

@@ -14,12 +14,12 @@ import com.anyfork.utils.FieldEncryptUtils;
 public class DefaultEncryptor implements IEncryptor{
 
     @Override
-    public String encrypt(Algorithm var1, String var2, String var3, String var4, Object var5) throws Exception {
-        return FieldEncryptUtils.encryptOrDecryptHandler(var1, var2, true, var3, var4);
+    public String encrypt(Algorithm algorithm, String keyPassword, String publicKey, String plainTextOrCipherText, Object metaObject) throws Exception {
+        return FieldEncryptUtils.encryptOrDecryptHandler(algorithm, keyPassword, true, publicKey, plainTextOrCipherText);
     }
 
     @Override
-    public String decrypt(Algorithm var1, String var2, String var3, String var4, Object var5) throws Exception {
-        return FieldEncryptUtils.encryptOrDecryptHandler(var1, var2, false, var3, var4);
+    public String decrypt(Algorithm algorithm, String keyPassword, String publicKey, String plainTextOrCipherText, Object metaObject) throws Exception {
+        return FieldEncryptUtils.encryptOrDecryptHandler(algorithm, keyPassword, false, publicKey, plainTextOrCipherText);
     }
 }

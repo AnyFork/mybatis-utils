@@ -3,6 +3,7 @@ package com.anyfork.modules.userInfo.entity;
 import com.anyfork.annotation.FieldEncrypt;
 import com.anyfork.annotation.FieldSensitive;
 import com.anyfork.constant.SensitiveType;
+import com.anyfork.enums.Algorithm;
 import com.anyfork.enums.GenderEnum;
 import com.anyfork.modules.BaseEntity;
 import com.baomidou.mybatisplus.annotation.*;
@@ -34,12 +35,13 @@ public class UserInfoEntity extends BaseEntity implements Serializable {
     private Long userId;
 
     @TableField("user_name")
-    @FieldSensitive(type = "")
-    @FieldEncrypt
+    @FieldSensitive(type =SensitiveType.CHINESE_NAME)
+    @FieldEncrypt(algorithm = Algorithm.RSA)
     private String userName;
 
     @TableField("user_phone")
     @FieldSensitive(type = SensitiveType.MOBILE)
+    @FieldEncrypt(algorithm = Algorithm.PBEWithMD5AndDES)
     private String userPhone;
 
     @TableField("user_birth")
@@ -47,6 +49,7 @@ public class UserInfoEntity extends BaseEntity implements Serializable {
 
     @TableField("user_password")
     @FieldSensitive(type =SensitiveType.PASSWORD)
+    @FieldEncrypt(algorithm = Algorithm.MD5_32)
     private String userPassword;
 
     @TableField(value = "user_status",fill = FieldFill.INSERT)

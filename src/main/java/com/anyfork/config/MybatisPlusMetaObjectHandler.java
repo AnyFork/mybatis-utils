@@ -19,7 +19,7 @@ public class MybatisPlusMetaObjectHandler implements MetaObjectHandler {
 
     @Override
     public void insertFill(MetaObject metaObject) {
-        log.info("start insert fill ....");
+        log.info("Start Insert Fill ....");
         this.strictInsertFill(metaObject, "createdBy", Long.class, 1L);
         this.strictInsertFill(metaObject, "createdTime", LocalDateTime::now, LocalDateTime.class);
         this.strictInsertFill(metaObject, "version", Integer.class, 0);
@@ -30,7 +30,7 @@ public class MybatisPlusMetaObjectHandler implements MetaObjectHandler {
 
     @Override
     public void updateFill(MetaObject metaObject) {
-        log.info("start update fill ....");
+        log.info("Start Update Fill ....");
         this.strictUpdateFill(metaObject, "updatedBy", Long.class, 1L);
         this.strictUpdateFill(metaObject, "updatedTime", LocalDateTime::now, LocalDateTime.class);
     }
